@@ -17,8 +17,10 @@
 
     <h1 class="titleAwal">(DEVelop) Pemasukan Pengeluaran</h1>
 
+    <div class="container">
     <a href="{{ url('pemasukan') }}" class="btn btn-primary">Tambah Pemasukan</a>
     <a href="{{ url('pengeluaran') }}" class="btn btn-primary">Tambah Pengeluaran</a>
+    </div>
 
     <h1>Laporan Pemasukan</h1>
 
@@ -33,14 +35,14 @@
         </thead>
         <tbody>
             <tr>
-                <td>Dom</td>
-                <td>6000</td>
-                <td></td>
+                <td>200,000</td>
+                <td>freelance</td>
+                <td>12/08/2022</td>
             </tr>
             <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-                <td></td>
+                <td>150,000</td>
+                <td>lainnya...</td>
+                <td>14/08/2022</td>
             </tr>
         </tbody>
     </table>
@@ -60,14 +62,14 @@
         </thead>
         <tbody>
             <tr>
-                <td>Dom</td>
-                <td>6000</td>
-                <td></td>
+                <td>10,000</td>
+                <td>Makan</td>
+                <td>12/08/2022</td>
             </tr>
             <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-                <td></td>
+                <td>100,000</td>
+                <td>Jalan - Jalan</td>
+                <td>13/08/2022</td>
             </tr>
         </tbody>
     </table>

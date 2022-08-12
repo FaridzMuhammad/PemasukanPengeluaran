@@ -14,7 +14,7 @@ use App\Http\Controller\pemasukancontroller;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('index');
 });
 Route::get('/pemasukan', function () {

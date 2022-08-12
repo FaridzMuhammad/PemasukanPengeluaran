@@ -17,13 +17,7 @@
 
     <h1 class="titleAwal">(DEVelop) Pengeluaran Pemasukan</h1>
 
-
-    <div id="containerButton">
-        <div class="b1">
-            <button onclick="Pemasukan()" class="button">Tambah Pemasukan</button>
-        </div>
-        <button onclick="Pengeluaran()" class="button">Tambah Pengeluaran</button>
-    </div>
+    <a href="{{ url('home') }}" class="btn btn-primary">Back to Home</a>
 
     <div class="pembungkus">
         <form action="/action_page.php">
@@ -63,13 +57,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>Dom</td>
-                <td>6000</td>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
             <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
         </tbody>

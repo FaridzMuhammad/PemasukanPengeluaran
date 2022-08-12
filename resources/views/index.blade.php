@@ -17,42 +17,7 @@
 
     <h1 class="titleAwal">(DEVelop) Pemasukan Pengeluaran</h1>
 
-
-    <div id="containerButton">
-        <div class="b1">
-            <button onclick="Pemasukan()" class="button">Tambah Pemasukan</button>
-        </div>
-        <button onclick="Pengeluaran()" class="button">Tambah Pengeluaran</button>
-    </div>
-
     <h1>Laporan Pemasukan</h1>
-
-    <div class="pembungkus">
-        <form action="/action_page.php">
-            <label for="fname">Nominal</label>
-            <input type="text" id="fname" name="firstname" placeholder="Masukan Jumlah">
-
-            <div id ="kategori">
-            <label>Kategori Pendapatan</label>
-            <select>
-                <option value="OrangTua">Orang Tua</option>
-                <option value="Hutang">Hutang</option>
-                <option value="Freelance">Freelance</option>
-                <option value="Lainnya">Lainnya...</option>
-            </select>
-            </div>
-
-            <div class="date">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="">
-            </div>
-
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-
-    <h1>History</h1>
 
     <div class="history">
     <table class="styled-table">

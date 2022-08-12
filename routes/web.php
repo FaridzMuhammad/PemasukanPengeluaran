@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\pemasukancontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
-
-Route::get('/style', function () {
-    return view('style');
 });

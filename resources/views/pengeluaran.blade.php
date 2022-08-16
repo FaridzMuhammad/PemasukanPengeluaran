@@ -65,8 +65,6 @@
 
     <h1>History</h1>
 
-    <h1>History</h1>
-
     <div class="history">
     <table class="styled-table">
         <thead>

@@ -17,13 +17,26 @@
 
     <h1 class="titleAwal">(DEVelop) Pengeluaran Pemasukan</h1>
 
+    <a href="{{ url('/') }}">Back to Home</a>
+    <script type="text/javascript">
+        const buttons = document.querySelectorAll('a');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
 
-    <div id="containerButton">
-        <div class="b1">
-            <button onclick="Pemasukan()" class="button">Tambah Pemasukan</button>
-        </div>
-        <button onclick="Pengeluaran()" class="button">Tambah Pengeluaran</button>
-    </div>
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+
+                let ripples = document.createElement('span');
+                ripples.style.left = x + 'px';
+                ripples.style.top = y + 'px';
+                this.appendChild(ripples);
+
+                setTimeout(() => {
+                    ripples.remove()
+                },1000);
+            })
+        })
+    </script>
 
     <div class="pembungkus">
         <form action="/action_page.php">
@@ -52,6 +65,8 @@
 
     <h1>History</h1>
 
+    <h1>History</h1>
+
     <div class="history">
     <table class="styled-table">
         <thead>
@@ -63,13 +78,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>Dom</td>
-                <td>6000</td>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
             <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
         </tbody>

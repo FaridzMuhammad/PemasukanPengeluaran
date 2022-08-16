@@ -17,5 +17,16 @@ use App\Http\Controller\PemPengController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/pemasukan', [PemPengController::class, 'pemasukan']);
-Route::get('/pengeluaran', [PemPengController::class, 'pengeluaran']);
+// Route::get('/pemasukan', [PemPengController::class, 'pemasukan']);
+// Route::get('/pengeluaran', [PemPengController::class, 'pengeluaran']);
+
+Route::get('/pemasukan', function () {
+    return view('pemasukan');
+});
+Route::get('/pengeluaran', function () {
+    return view('pengeluaran');
+});
+
+// Route::get('/pemasukan', [PemPengController::class, 'pemasukan']);
+// Route::get('/pengeluaran', [PemPengController::class, 'pengeluaran']);
+

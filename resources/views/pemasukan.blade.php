@@ -40,7 +40,8 @@
     </script>
 
     <div class="pembungkus">
-        <form action="{{url('/store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('/pemasukan/store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <label for="fname">Nominal</label>
             <input type="text" id="nominal" name="nominal" placeholder="Masukan Jumlah">
 

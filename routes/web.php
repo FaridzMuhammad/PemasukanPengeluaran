@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pemasukancontroller;
+use App\Http\Controllers\pengeluarancontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,8 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/pemasukan',[pemasukancontroller::class, 'create']);
-Route::get('/pengeluaran', function () {
-    return view('pengeluaran');
-});
+Route::get('/pengeluaran',[pengeluarancontroller::class, 'create']);
 
-Route::post('/store', [pemasukancontroller::class, 'store'])->name('store');
+Route::post('pemasukan/store', [pemasukancontroller::class, 'store'])->name('store');
+Route::post('pengeluaran/store', [pengeluarancontroller::class, 'store'])->name('store');
 

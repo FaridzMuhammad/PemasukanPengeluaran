@@ -16,8 +16,28 @@
 <body>
 
     <h1 class="titleAwal">(DEVelop) Pengeluaran Pemasukan</h1>
+    <div class="back">
+    <a href="{{ url('/') }}" class="">Back to Home</a>
+    </div>
+    <script type="text/javascript">
+        const buttons = document.querySelectorAll('a');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
 
-    <a href="{{ url('home') }}" class="btn btn-primary">Back to Home</a>
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+
+                let ripples = document.createElement('span');
+                ripples.style.left = x + 'px';
+                ripples.style.top = y + 'px';
+                this.appendChild(ripples);
+
+                setTimeout(() => {
+                    ripples.remove()
+                },1000);
+            })
+        })
+    </script>
 
     <div class="pembungkus">
         <form action="/action_page.php">

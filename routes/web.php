@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\pemasukancontroller;
+use App\Http\Controller\PemPengController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +17,5 @@ use App\Http\Controller\pemasukancontroller;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/pemasukan', [PemPengController::class, 'pemasukan']);
+Route::get('/pengeluaran', [PemPengController::class, 'pengeluaran']);

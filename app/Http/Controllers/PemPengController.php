@@ -21,9 +21,13 @@ class pemasukancontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function pemasukan()
     {
-        //
+        return view('pemasukan');
+    }
+    public function pengeluaran()
+    {
+        return view('pengeluaran');
     }
 
     /**

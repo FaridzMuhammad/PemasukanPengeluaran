@@ -40,15 +40,14 @@
     </script>
 
     <div class="pembungkus">
-        <form action="/action_page.php">
+        <form action="{{url('/store')}}" method="POST" enctype="multipart/form-data">
             <label for="fname">Nominal</label>
-            <input type="text" id="fname" name="firstname" placeholder="Masukan Jumlah">
+            <input type="text" id="nominal" name="nominal" placeholder="Masukan Jumlah">
 
             <div id ="kategori">
             <label>Kategori Pendapatan</label>
-            <select>
+            <select name="kategori">
                 <option value="OrangTua">Orang Tua</option>
-                <option value="Hutang">Hutang</option>
                 <option value="Freelance">Freelance</option>
                 <option value="Lainnya">Lainnya...</option>
             </select>
@@ -57,7 +56,7 @@
             <div class="date">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <input type="date" data-date="" data-date-format="DD MMMM YYYY" value="">
+            <input type="date" id="tanggal" name="tanggal" data-date-format="DD MMMM YYYY" value="">
             </div>
 
             <input type="submit" value="Submit">

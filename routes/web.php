@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pemasukancontroller;
 use App\Http\Controllers\pengeluarancontroller;
+use App\Http\Controllers\indexcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,10 @@ use App\Http\Controllers\pengeluarancontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('index');
+    return view('main');
 });
+// Route::get('/',[indexcontroller::class,'index']);
 Route::get('/pemasukan',[pemasukancontroller::class, 'create']);
 Route::get('/pengeluaran',[pengeluarancontroller::class, 'create']);
 

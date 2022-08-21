@@ -13,7 +13,7 @@ class pengeluarancontroller extends Controller
     {
         $Pengeluaran = Pengeluaran::all();
 
-        return view('index',  ['Pengeluaran' => $Pengeluaran]);
+        return view('tablePengeluaran',  ['Pengeluaran' => $Pengeluaran]);
     }
 
     public function create()

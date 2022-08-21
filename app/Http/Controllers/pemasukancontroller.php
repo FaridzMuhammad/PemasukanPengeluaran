@@ -12,7 +12,7 @@ class pemasukancontroller extends Controller
     public function index()
     {
         $pemasukan = Pemasukan::all();
-        return view('index',['pemasukan'=>$pemasukan]);
+        return view('tablePemasukan',['pemasukan'=>$pemasukan]);
     }
 
     public function create()

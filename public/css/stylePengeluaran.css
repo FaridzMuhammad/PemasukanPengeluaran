@@ -10,19 +10,14 @@
     justify-content: center;
 }
 
-a{
-    position: relative;
-    display: inline-block;
-    padding: 8px 10px;
-    margin:10px 10px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font: 18px;
-    letter-spacing: 2px;
-    border-radius: 40px;
-    overflow: hidden;
-    background: linear-gradient(90deg,#0162c8,#55e7fc);
+.nominal{
+    background-color: #343a40;
+}
+
+.date{
+    background-color: #5d6b79;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 span{
@@ -60,25 +55,27 @@ input[type=text], select {
     box-sizing: border-box;
   }
 
-  input[type=submit] {
-    position: relative;
+  .submit {
+    width: 100%;
     display: inline-block;
-    padding: 8px 10px;
-    margin:10px 10px;
+    padding: 12px 20px;
+    margin: 8px 0px;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font: 18px;
     letter-spacing: 2px;
-    border-radius: 40px;
+    border-radius: 4px;
     overflow: hidden;
-    background: linear-gradient(90deg,#0162c8,#55e7fc);
+    background: linear-gradient(90deg,#3f6791,#2c85f1);
     font-weight: bold;
+    margin-top: 20px;
   }
 
 
   input[type=submit]:hover {
-    color: rgb(22, 65, 206);
+    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #2c85f1, #3f6791);
   }
 
 
@@ -93,7 +90,7 @@ label {
 
 }
 
-.pembungkus {
+ .pembungkus {
   padding: 10px;
 }
 

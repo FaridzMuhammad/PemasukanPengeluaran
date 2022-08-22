@@ -9,6 +9,12 @@ class pemasukancontroller extends Controller
 {
 
 
+    public function donutchart()
+    {
+        $pemasukan=Pemasukan::all();
+        return view('main',['pemasukan'=>$pemasukan]);
+    }
+
     public function index()
     {
         $pemasukan = Pemasukan::all();

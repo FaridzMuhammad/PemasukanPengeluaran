@@ -4,13 +4,13 @@
     <form action="{{url('/pengeluaran/store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="fname">Nominal</label>
-        <input class="form-control form-control-lg" type="text" placeholder="Nominal">
+        <input class="nominal" type="text" id="nominal" name="nominal" placeholder="Masukan Jumlah">
 
         <div id ="kategori">
         <label>Kategori Pendapatan</label>
         <select name="kategori">
             <option value="OrangTua">Makan</option>
-            <option value="Hutang">Jajan</option>
+            <option value="Jajan">Jajan</option>
             <option value="Freelance">Jalan - Jalan</option>
             <option value="Lainnya">Lainnya...</option>
         </select>

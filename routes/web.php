@@ -15,9 +15,7 @@ use App\Http\Controllers\indexcontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/',[pemasukancontroller::class, 'donutchart']);
 // Route::get('/',[indexcontroller::class,'index']);
 Route::get('/pemasukan',[pemasukancontroller::class, 'create']);
 Route::get('/pengeluaran',[pengeluarancontroller::class, 'create']);

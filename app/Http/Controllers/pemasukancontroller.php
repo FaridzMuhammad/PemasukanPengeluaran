@@ -9,11 +9,16 @@ class pemasukancontroller extends Controller
 {
 
 
+    public function donutchart()
+    {
+        $pemasukan=Pemasukan::all();
+        return view('main',['pemasukan'=>$pemasukan]);
+    }
+
     public function index()
     {
-        $Pemasukan = Pemasukan::all();
-
-        return view('index',  ['Pemasukan' => $Pemasukan]);
+        $pemasukan = Pemasukan::all();
+        return view('tablePemasukan',['pemasukan'=>$pemasukan]);
     }
 
     public function create()

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pemasukan extends Model
 {
-    use softDeletes;
+
+    use HasFactory;
 
     protected $table = 'pemasukan';
 

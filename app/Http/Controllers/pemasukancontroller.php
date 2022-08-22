@@ -18,6 +18,7 @@ class pemasukancontroller extends Controller
 
     public function create()
     {
+        
         return view('pemasukan');
     }
 
@@ -25,6 +26,7 @@ class pemasukancontroller extends Controller
     {
         $data = $request->except(['_token']);
         Pemasukan::insert($data);
+        
         return redirect('/');
     }
 

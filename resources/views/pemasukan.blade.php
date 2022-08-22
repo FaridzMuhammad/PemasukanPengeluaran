@@ -40,27 +40,37 @@
     </script>
 
     <div class="pembungkus">
-        <form action="{{url('/store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('/store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <label for="fname">Nominal</label>
             <input type="text" id="nominal" name="nominal" placeholder="Masukan Jumlah">
 
-            <div id ="kategori">
+            <div id="kategori">
             <label>Kategori Pendapatan</label>
-            <select name="kategori">
+            <select id="nilaiKategori" name="kategori">
                 <option value="OrangTua">Orang Tua</option>
                 <option value="Freelance">Freelance</option>
                 <option value="Lainnya">Lainnya...</option>
             </select>
             </div>
 
-            <div class="date">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <input type="date" id="tanggal" name="tanggal" data-date-format="DD MMMM YYYY" value="">
-            </div>
+
+            {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+            <input type="date" id="tanggal" name="tanggal">
+
 
             <input type="submit" value="Submit">
         </form>
+        <script>
+            var xNominal = document.getElementById("nominal").value;
+            var xKategori = document.getElementById("nilaiKategori").value;
+            var xTanggal = document.getElementById("tanggal").value;
+            console.log(xNominal)
+            console.log(xKategori)
+            console.log(xTanggal)
+
+        </script>
     </div>
 
     <h1>History</h1>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemasukan;
+use App\Models\Pengeluaran;
 
 class pemasukancontroller extends Controller
 {
@@ -11,14 +12,18 @@ class pemasukancontroller extends Controller
 
     public function donutchart()
     {
-        $pemasukan=Pemasukan::all();
-        return view('main',['pemasukan'=>$pemasukan]);
+        $pemasukan = Pemasukan::all();
+        $pengeluaran = Pengeluaran::all();
+        return view('main')->with([
+            'pemasukan' => $pemasukan,
+            'pengeluaran' => $pengeluaran
+        ]);
     }
 
     public function index()
     {
         $pemasukan = Pemasukan::all();
-        return view('tablePemasukan',['pemasukan'=>$pemasukan]);
+        return view('tablePemasukan', ['pemasukan' => $pemasukan]);
     }
 
     public function create()

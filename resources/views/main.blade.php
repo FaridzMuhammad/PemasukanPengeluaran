@@ -91,25 +91,18 @@
     var dataPemasukan = {!! json_encode($pemasukan -> toArray()) !!}
     var nominalPemasukan = [];
     var kategoriPemasukan = [];
-    // console.log(dataPemasukan)
-    // for(var i = 0; i < dataPemasukan.length; i++){
-
-    //     for(var j = 0; j<dataPemasukan.length; j++){
-    //         if(dataPemasukan[i].kategori == dataPemasukan[j].kategori)
-    //         {
-
-    //         }
-
-    //     }
-    // }
-    console.log(dataPemasukan.kategori)
+    for(var i = 0; i < dataPemasukan.length; i++){
+      nominalPemasukan[i] = dataPemasukan[i].nominal;
+      kategoriPemasukan[i] = dataPemasukan[i].kategori;
+    }
+    // console.log(nominalPemasukan)
 
     var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
     var donutData        = {
-      labels: dataPemasukan.kategori,
+      labels: kategoriPemasukan,
       datasets: [
         {
-          data: dataPemasukan.nominal,
+          data: nominalPemasukan,
           backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
         }
       ]

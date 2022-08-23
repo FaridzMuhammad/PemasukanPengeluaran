@@ -9,9 +9,9 @@
         <div id ="kategori">
         <label>Kategori Pendapatan</label>
         <select name="kategori">
-            <option value="OrangTua">Makan</option>
+            <option value="Makan">Makan</option>
             <option value="Jajan">Jajan</option>
-            <option value="Freelance">Jalan - Jalan</option>
+            <option value="Jalan - Jalan">Jalan - Jalan</option>
             <option value="Lainnya">Lainnya...</option>
         </select>
         </div>

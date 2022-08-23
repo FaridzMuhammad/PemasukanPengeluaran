@@ -68,6 +68,8 @@
 
     </div>
 
+    <div class="row">
+    <div class="col">
     <div class="card card-danger">
         <div class="card-header">
             <h3 class="card-title">Donut Chart</h3>
@@ -87,7 +89,8 @@
         </div>
         <!-- /.card-body -->
     </div>
-
+    </div>
+    <div class="col">
     <div class="card card-danger">
         <div class="card-header">
             <h3 class="card-title">Donut Chart</h3>
@@ -107,7 +110,8 @@
         </div>
         <!-- /.card-body -->
     </div>
-
+    </div>
+    </div>
 
 
     <script>
@@ -117,14 +121,10 @@
         var kategoriPemasukan = [];
         var nominalPengeluaran = [];
         var kategoriPengeluaran = [];
+        var graphDataPengeluaran = [];
+        var graphLabelPengeluaran = [];
         var graphLabelPemasukan = [];
         var graphDataPemasukan = [];
-
-
-        // console.log(nominalPengeluaran)
-        // console.log(kategoriPengeluaran)
-        // console.log(dataPengeluaran)
-        // console.log(dataPemasukan)
 
 
         for (var i = 0; i < dataPemasukan.length; i++) {
@@ -136,6 +136,8 @@
             nominalPengeluaran[j] = dataPengeluaran[j].nominal;
             kategoriPengeluaran[j] = dataPengeluaran[j].kategori;
         }
+
+        // console.log(nominalPengeluaran)
 
         var x = 0;
         for (var i = 0; i < dataPemasukan.length; i++) {
@@ -158,8 +160,30 @@
             }
         }
 
-        console.log(graphLabelPemasukan)
-        console.log(graphDataPemasukan)
+        var y = 0;
+        for (var i = 0; i < dataPengeluaran.length; i++) {
+            var tempKatPeng = kategoriPengeluaran[i];
+            var tempDatPeng = 0;
+            for (var j = 0; j < dataPengeluaran.length; j++) {
+                if (tempKatPeng == kategoriPengeluaran[j] && tempKatPeng != -1) {
+                    graphLabelPengeluaran[y] = tempKatPeng;
+                    tempDatPeng += nominalPengeluaran[j];
+                    nominalPengeluaran[j] = 0;
+                    kategoriPengeluaran[j] = -1;
+
+                }
+            }
+            if(tempDatPeng != 0){
+              graphDataPengeluaran[y] = tempDatPeng;
+              console.log(graphDataPengeluaran)
+            }
+            if (tempKatPeng != -1) {
+                y++;
+            }
+        }
+
+        console.log(graphLabelPengeluaran)
+        console.log(dataPengeluaran)
 
 
         var donutChartCanvas = $('#donutPemasukan').get(0).getContext('2d')
@@ -184,9 +208,9 @@
 
         var donutChartCanvas2 = $('#donutPengeluaran').get(0).getContext('2d')
         var donutData2 = {
-            labels: kategoriPengeluaran,
+            labels: graphLabelPengeluaran,
             datasets: [{
-                data: nominalPengeluaran,
+                data: graphDataPengeluaran,
                 backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
             }]
         }

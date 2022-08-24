@@ -5,23 +5,15 @@
     <div class="row">
         <div class="col">
             <div class="info-box bg-gradient-info">
-                <span class="info-box-icon"><img style="width: 50px; height:70px;"
+                <span class="info-box-icon"><img style="width: 40px; height:60px;"
                         src="{{ asset('AdminLTE/dist/img/Dolar.png') }}" alt=""></span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">Total Uang</span>
-                    <span class="info-box-number"></span>
-
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
-                    <span class="progress-description">
-                        70% Increase in 30 Days
-                    </span>
+                    <span id="totalUang" class="info-box-number"></span>
                 </div>
-                <!-- /.info-box-content -->
+
             </div>
-            <!-- /.info-box -->
         </div>
 
         <div class="col">
@@ -31,16 +23,8 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Total Pemasukan</span>
-                    <span class="info-box-number"></span>
-
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
-                    <span class="progress-description">
-                        70% Increase in 30 Days
-                    </span>
+                    <span id="totalPemasukan" class="info-box-number">hadad</span>
                 </div>
-                <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
         </div>
@@ -52,14 +36,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Total Pengeluaran</span>
-                    <span class="info-box-number"></span>
-
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
-                    <span class="progress-description">
-                        70% Increase in 30 Days
-                    </span>
+                    <span id="totalPengeluaran" class="info-box-number"></span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -72,7 +49,7 @@
     <div class="col">
     <div class="card card-danger">
         <div class="card-header">
-            <h3 class="card-title">Donut Chart</h3>
+            <h3 class="card-title">Pemasukan</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -93,7 +70,7 @@
     <div class="col">
     <div class="card card-danger">
         <div class="card-header">
-            <h3 class="card-title">Donut Chart</h3>
+            <h3 class="card-title">Pengeluaran</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -113,6 +90,36 @@
     </div>
     </div>
 
+    <script>
+        var xitung = 0;
+        var totalPemasukan = 0;
+        var ykurang = 0;
+        var totalPengeluaran = 0;
+    </script>
+    @foreach ($pemasukan as $nominalPemasukan)
+    <script>
+        var nominalPemasukan = {!! json_encode($pemasukan->toArray()) !!};
+        totalPemasukan += nominalPemasukan[xitung].nominal;
+        console.log(totalPemasukan)
+        xitung++;
+    </script>
+    @endforeach
+
+    @foreach ($pengeluaran as $nominalPengeluaran)
+    <script>
+        var nominalPengeluaran = {!! json_encode($pengeluaran->toArray()) !!};
+        totalPengeluaran += nominalPengeluaran[ykurang].nominal;
+        console.log(totalPengeluaran)
+        ykurang++;
+    </script>
+
+    @endforeach
+
+    <script>
+        document.getElementById("totalPemasukan").innerHTML=totalPemasukan.toLocaleString('en-US');
+        document.getElementById("totalPengeluaran").innerHTML=totalPengeluaran.toLocaleString('en-US');
+        document.getElementById("totalUang").innerHTML=(totalPemasukan - totalPengeluaran).toLocaleString('en-US');
+    </script>
 
     <script>
         var dataPemasukan = {!! json_encode($pemasukan->toArray()) !!}
@@ -149,7 +156,7 @@
                     tempDatPem += nominalPemasukan[j];
                     nominalPemasukan[j] = 0;
                     kategoriPemasukan[j] = -1;
-                    console.log(x)
+                    // console.log(x)
                 }
             }
             if(tempDatPem != 0){
@@ -175,15 +182,15 @@
             }
             if(tempDatPeng != 0){
               graphDataPengeluaran[y] = tempDatPeng;
-              console.log(graphDataPengeluaran)
+            //   console.log(graphDataPengeluaran)
             }
             if (tempKatPeng != -1) {
                 y++;
             }
         }
 
-        console.log(graphLabelPengeluaran)
-        console.log(dataPengeluaran)
+        // console.log(graphLabelPengeluaran)
+        // console.log(dataPengeluaran)
 
 
         var donutChartCanvas = $('#donutPemasukan').get(0).getContext('2d')

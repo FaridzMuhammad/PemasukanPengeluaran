@@ -31,7 +31,7 @@
             <tbody>
                 @foreach ($Pengeluaran as $dataPengeluaran)
                 <tr>
-                    <td>{{ $dataPengeluaran->nominal}}</td>
+                    <td>{{ number_format($dataPengeluaran->nominal)}}</td>
                     <td>{{ $dataPengeluaran->kategori}}</td>
                     <td>{{ $dataPengeluaran->tanggal}}</td>
                 </tr>

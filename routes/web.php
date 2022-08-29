@@ -18,7 +18,6 @@ use App\Http\Controllers\indexcontroller;
 |
 */
 Route::get('/',[pemasukancontroller::class, 'donutchart']);
-// Route::get('/',[indexcontroller::class,'index']);
 Route::get('/pemasukan',[pemasukancontroller::class, 'create']);
 Route::get('/pengeluaran',[pengeluarancontroller::class, 'create']);
 Route::get('/tablePemasukan', [pemasukancontroller::class,'index']);

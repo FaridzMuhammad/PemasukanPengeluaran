@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
             <div class="info-box bg-gradient-info">
-                <span class="info-box-icon"><img style="width: 40px; height:60px;"
+                <span class="info-box-icon"><img style="width: 30px; height:45px;"
                         src="{{ asset('AdminLTE/dist/img/Dolar.png') }}" alt=""></span>
 
                 <div class="info-box-content">

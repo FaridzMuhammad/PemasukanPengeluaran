@@ -43,7 +43,7 @@
     <!-- Sidebar -->
     <div class="sidebar"  >
 
-      <div class="user-panel pb-3 d-flex" style="margin-top: -15px">
+      <div class="user-panel pb-3 d-flex" style="margin-top: 20px">
       </div>
 
       <!-- Sidebar Menu -->
@@ -113,6 +113,8 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
